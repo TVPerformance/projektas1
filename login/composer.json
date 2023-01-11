@@ -1,0 +1,15 @@
+{
+    "name": "tomas/login",
+    "autoload": {
+        "psr-4": {
+            "Mano\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TVPerformance",
+            "email": "tomas.visockas2@gmail.com"
+        }
+    ],
+    "require": {}
+}
