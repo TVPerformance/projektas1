@@ -2,7 +2,8 @@
     "name": "tomas/login",
     "autoload": {
         "psr-4": {
-            "Mano\\": "app/"
+            "Mano\\": "app/",
+            "App\\DB\\": "app/"
         }
     },
     "authors": [
