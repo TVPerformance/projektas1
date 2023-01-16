@@ -5,7 +5,8 @@ use App\DB\DataBase;
 
 class FileReader implements DataBase {
 
-    private $data, $name;
+    private $data;
+    private $name;
 
     public function __construct($name)
     {
@@ -17,7 +18,7 @@ class FileReader implements DataBase {
         }
     }
 
-    public function _destruct()
+    public function __destruct()
     {
         file_put_contents(__DIR__ . '/' .$this->name, serialize($this->data));
     }
@@ -56,13 +57,19 @@ class FileReader implements DataBase {
 
     public function show(int $userId) : array
     {
-        return $this->data[$userId] ?? [];
+       foreach($this->data as $data){
+        if($userId == $data['id']){
+            return $data;
+        }
+       }
+       return [];
     }
 
     public function showAll() : array
     {
         return $this->data;
     }
+
 
 
 }    

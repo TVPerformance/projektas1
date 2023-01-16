@@ -4,6 +4,8 @@ namespace Mano;
 use Mano\Controllers\Calculator;
 use Mano\Controllers\Grybas;
 
+use function PHPSTORM_META\map;
+
 class App {
 
     public static function start()
@@ -25,6 +27,26 @@ class App {
           return (new Grybas)->index();
         }
 
+        if($url[0] == 'grybai' && $url[1] == 'create' && count($url) == 2 && $method == 'GET') {
+          return (new Grybas)->create();
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'save' && count($url) == 2 && $method == 'POST') {
+          return (new Grybas)->save();
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'edit' && count($url) == 3 && $method == 'GET') {
+          return (new Grybas)->edit($url[2]);
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'update' && count($url) == 3 && $method == 'POST') {
+          return (new Grybas)->update($url[2]);
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'delete' && count($url) == 3 && $method == 'POST') {
+          return (new Grybas)->delete($url[2]);
+        }
+
         return '404 NOT FOUND';
     }
 
@@ -44,5 +66,16 @@ class App {
       ob_end_clean();
 
       return $out;
+    }
+
+    // public static function url($url)
+    // {
+    //   return 'http://mano.lt/' . $url;
+    // }
+
+    public static function redirect($url)
+    {
+      header('Location: ' . URL . $url);
+      return null;
     }
 }
