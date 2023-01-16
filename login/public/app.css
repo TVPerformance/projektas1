@@ -10819,6 +10819,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  color: skyblue;
+h1, .h1 {
+  color: blue;
 }
