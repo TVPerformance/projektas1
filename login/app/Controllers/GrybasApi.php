@@ -4,14 +4,18 @@ namespace Mano\Controllers;
 use Mano\App;
 use Mano\DB\FileReader as FR;
 
-class Grybas {
+class GrybasApi {
 
     public function index()
     {
 
     $grybai = (new FR('grybai'))->showAll();
-    $pageTitle = 'Grybai | Sarasas';
-    return App::view('Grybas-list', compact('grybai', 'pageTitle'));
+  
+    
+    header('Content-Type: application/json; charset=utf-8');
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET');
+    return json_encode(['grybai' => array_values($grybai)]);
 
     }
 
@@ -42,8 +46,8 @@ class Grybas {
 
     public function delete($id)
     { 
-        // print_r($id);
-        (new FR('grybai'))->delete($id);
-        return App::redirect('grybai');
+        
+         (new FR('grybai'))->delete($id);
+         return App::redirect('grybai');
     }
 }

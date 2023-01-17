@@ -3,6 +3,7 @@
 namespace Mano;
 use Mano\Controllers\Calculator;
 use Mano\Controllers\Grybas;
+use Mano\Controllers\GrybasApi;
 use Mano\Controllers\Api;
 
 use function PHPSTORM_META\map;
@@ -54,6 +55,34 @@ class App {
 
         if($url[0] == 'users' && $url[1] == 'js' && count($url) == 2 && $method == 'GET') {
           return (new Api)->jsUsers($url[1]);
+        }
+
+        // Grybas API
+
+        if($url[0] == 'api' && $url[1] == 'grybai' && count($url) == 2 && $method == 'GET') {
+          return (new GrybasApi)->index();
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'create' && count($url) == 2 && $method == 'GET') {
+          return (new Grybas)->create();
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'save' && count($url) == 2 && $method == 'POST') {
+          return (new Grybas)->save();
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'edit' && count($url) == 3 && $method == 'GET') {
+          return (new Grybas)->edit($url[2]);
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'update' && count($url) == 3 && $method == 'POST') {
+          return (new Grybas)->update($url[2]);
+        }
+
+        if($url[0] == 'grybai' && $url[1] == 'delete' && count($url) == 3 && $method == 'POST') {
+
+          print_r($url[2]);
+          // return (new Grybas)->delete($url[2]);
         }
 
         return '404 NOT FOUND';

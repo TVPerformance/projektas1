@@ -52,7 +52,9 @@ class FileReader implements DataBase {
 
     public function delete(int $userId) : void
     {
+     
         $this->data = array_filter($this->data, fn($data) => $userId != $data['id']);
+  
     }
 
     public function show(int $userId) : array
