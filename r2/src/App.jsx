@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
    axios.get('http://mano.lt/api/grybai')
    .then(res => {
-    console.log(res.data.grybai)
+    //console.log(res.data.grybai)
     setMushrooms(res.data.grybai);
   })
   }, []);

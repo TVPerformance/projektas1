@@ -1,0 +1,52 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+
+
+.smallimg {
+    width: 180px;
+    height: auto;
+}
+
+.list-table {
+    margin: 17px;
+    padding: 17px;
+    border: 2px solid skyblue;
+}
+input {
+        width: 50px;
+}
+
+.nav-item.dropdown 
+a {
+    text-decoration: none;
+}
+#cartDropdown {
+&::after {
+    display: none;
+}
+.cart-svg {
+    position: relative;
+    span {
+        font-size: 15px;
+        &.count {
+            position: absolute;
+            text-align: center;
+            width: 30px;
+            left: 8px;
+            font-size: 20px;
+        } 
+    }
+    svg.cart {
+        width: 45px;
+        height: 45px;
+        fill: chartreuse;
+    }
+}
+}

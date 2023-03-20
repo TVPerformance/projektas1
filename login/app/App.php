@@ -81,8 +81,8 @@ class App {
 
         if($url[0] == 'grybai' && $url[1] == 'delete' && count($url) == 3 && $method == 'POST') {
 
-          print_r($url[2]);
-          // return (new Grybas)->delete($url[2]);
+         // print_r($url[2]);
+          return (new Grybas)->delete($url[2]);
         }
 
         return '404 NOT FOUND';

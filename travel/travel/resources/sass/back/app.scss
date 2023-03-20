@@ -1,0 +1,27 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+div {
+   .hotel {
+    font-size: 1.5em;
+    font-weight: bold;
+   }
+   .country {
+    font-size: 1em;
+   }
+   .price {
+    font-size: 1.2em;
+   }
+   .stay {
+    font-size: 1.2em;
+   }
+}
+.capital {
+    text-transform: uppercase;
+}

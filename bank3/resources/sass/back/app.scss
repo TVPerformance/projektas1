@@ -1,0 +1,61 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+button.btn[type=submit] {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+a.btn {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.span {
+    font-size: 1.1em;
+    font-weight: 400;
+    font-weight: bold;
+}
+
+.space {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.ps {
+   margin-left: 10px;
+}
+
+.name {
+    display: flex;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.virsus {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: aqua;
+    :hover {
+        color: blue;
+    }   
+}
+
+.useris {
+    color: crimson;  font-size: 1.1em;
+    font-weight: 700;
+}
+.logo {
+    width:  100px;
+    height: 100px;
+}
